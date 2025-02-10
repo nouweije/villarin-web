@@ -24,13 +24,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<h1>SignUp Form</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
-					<input class="text" type="text" name="Username" placeholder="Username" required="">
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+				<form action="{{ route('register') }} " method="POST">
+					@csrf
+					<input class="text" :value="old('username')" type="text" name="Username" placeholder="Username" required="">
+					<input class="text email" :value="old('email')" type="email" name="email" placeholder="Email" required="">
+					<input class="text" :value="old('password')" type="password" name="password" placeholder="Password" required="">
+					<input class="text w3lpass" :value="old('password')" type="password" name="password" placeholder="Confirm Password" required="">
 					<div class="wthree-text">
-						<label class="anim">
+						<label  class="anim">
 							<input type="checkbox" class="checkbox" required="">
 							<span>I Agree To The Terms & Conditions</span>
 						</label>
